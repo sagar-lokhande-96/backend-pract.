@@ -1,3 +1,4 @@
+// 2nd way using Promise
 const asyncHandler = (requestHandler) =>{
     (req,res,next) =>{
         Promise.resolve(requestHandler(req,res,next)).catch((err)=>next(err))
@@ -6,6 +7,9 @@ const asyncHandler = (requestHandler) =>{
 
 
 export {asyncHandler}
+
+
+// 1st way using try-catch block
 
 // const asyncHandler = (fn) => async (req,res,next)=>{
 //     try {
